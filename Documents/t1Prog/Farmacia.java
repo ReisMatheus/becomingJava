@@ -22,7 +22,7 @@ public class Farmacia {
 					while(1){
 						System.out.println("O medicamento necessita de receita?:\n(1) Sim\n(0) Nao");
 						Boolean receitaObrigatoria = entrada.nextBoolean();
-						if((receitaObrigatoria==true) or (receitaObrigatoria==false)){
+						if((receitaObrigatoria==true) || (receitaObrigatoria==false)){
 							break;
 						}
 					}
