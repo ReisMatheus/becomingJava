@@ -19,7 +19,7 @@ public class Farmacia {
 					String dataValidade = entrada.nextLine();
 					System.out.println("Digite o laboratoria do medicamento:\n");
 					String laboratorio = entrada.nextLine();
-					while(1){
+					while(true){
 						System.out.println("O medicamento necessita de receita?:\n(1) Sim\n(0) Nao");
 						Boolean receitaObrigatoria = entrada.nextBoolean();
 						if((receitaObrigatoria==true) || (receitaObrigatoria==false)){
@@ -39,7 +39,7 @@ public class Farmacia {
 					break;
 				}
 				case 3:{
-					if(i>=1){
+					if(this.i>=1){
 						System.out.println("Qual medicamento você deseja?\n");
 						int quantidade = entrada.nextInt();
 						popular.vender(quantidade);
@@ -57,7 +57,7 @@ public class Farmacia {
 				}
 
 			}
-			System.out.prinln("Para sair digite (1)\nPara continuar digite (0)\n");
+			System.out.println("Para sair digite (1)\nPara continuar digite (0)\n");
 			opcao = entrada.nextInt();
 		}
 

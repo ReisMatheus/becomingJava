@@ -24,14 +24,14 @@ public class Remedios{
 
 	}
 	void vender(int quantidade){
-		System.out.println("%s\n", this.nome);
+		System.out.println(this.nome);
 		if (this.receitaObrigatoria==true){
 			System.out.println("Esse medicamento só é vendido sob prescrição médica\n");
 		}
-		else if(this.qtEstoque>0){
-			int valorTotal = quantidade * this.precoVenda;
+		else if(this.qtdEstoque>0){
+			Double valorTotal = quantidade * this.precoVenda;
 			this.qtdEstoque -= quantidade;
-			System.out.printf("Medicamento: %s\nQuantidade: %s\nValor Unidade: %.2f\nValor Total: %.2f", this.nome, quantidade, this.precoVenda, valorTotal);
+			System.out.printf("Medicamento: "+this.nome+"\nQuantidade: %s\nValor Unidade: %.2f\nValor Total: %.2f", quantidade, this.precoVenda, valorTotal);
 		}
 
 	}
