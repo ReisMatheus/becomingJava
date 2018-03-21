@@ -13,6 +13,7 @@ public class Farmacia {
 								Para comprar digite (4)\n");
 			switch(opcao){
 				case 1:{
+					int i=1;
 					System.out.println("Digite o nome do medicamento:\n");
 					String nome = entrada.nextLine();
 					System.out.println("Digite o preco do medicamento:\n");
@@ -34,19 +35,28 @@ public class Farmacia {
 													nome, precoVenda, dataValidade,
 													 laboratorio, receitaObrigatoria, 
 													 qtdEstoque);
+					int i++;
 					break;
 				}
 				case 2:{
 					break;
 				}
 				case 3:{
+					if(i>=1){
+						System.out.println("Qual medicamento você deseja?\n");
+						int quantidade = entrada.nextInt();
+						popular.vender(quantidade);
+					}
+					else{
+						System.out.println("Nenhum medicamento foi cadastrado");
+					}
 					break;
 				}
 				case 4:{
 
 				}
 				default:{
-					System.out.println("Essa opcao nao e valida\n");
+					System.out.println("Essa opção não é válida\n");
 				}
 
 			}
