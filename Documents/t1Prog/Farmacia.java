@@ -7,10 +7,7 @@ public class Farmacia {
 		int sair = 0;
 		while(sair==0){
 			int opcao = entrada.nextInt();
-			System.out.println("Para cadastrar digite (1)\n
-								Para reajustar preco de venda digite (2)\n
-								Para vender digite (3)\n
-								Para comprar digite (4)\n");
+			System.out.println("Para cadastrar digite (1)\nPara reajustar preco de venda digite (2)\nPara vender digite (3)\nPara comprar digite (4)\n");
 			switch(opcao){
 				case 1:{
 					int i=1;
@@ -35,7 +32,7 @@ public class Farmacia {
 													nome, precoVenda, dataValidade,
 													 laboratorio, receitaObrigatoria, 
 													 qtdEstoque);
-					int i++;
+					i++;
 					break;
 				}
 				case 2:{
