@@ -34,8 +34,7 @@ public class Remedios{
 			System.out.printf("Medicamento: "+this.nome+"\nQuantidade: %s\nValor Unidade: %.2f\nValor Total: %.2f", quantidade, this.precoVenda, valorTotal);
 		}
 	}
-	void comprar(int quantidade){
-		
+	void comprar(int quantidade){	
 	}
 	void mostra(){
 		System.out.printf("Medicamento: %s\nPreco de Venda: %.2f\nData de validade: %s\nLaboratorio: %s\nReceita: %b\nEstoque: %i", this.nome, this.precoVenda, this.dataValidade, this.receitaObrigatoria, this.qtdEstoque);
