@@ -47,7 +47,7 @@ public class Farmacia {
 					break;
 				}
 				case 4:{
-					System.out.println("Deseja comprar qual medicamento?\n")
+					System.out.println("Deseja comprar qual medicamento?\n");
 					break;
 				}
 				default:{
