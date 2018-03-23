@@ -4,8 +4,8 @@ public class Farmacia {
 	public static void main(String[] args){
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Cadastro e compra de medicamentos");
-		int sair = 0, cadastro = 0;
-		while(cadastro == 0){
+		int cadastro = 0;
+		while(cadastro==0){
 				System.out.println("Digite o nome do medicamento:\n");
 				String nome = entrada.nextLine();
 				System.out.println("Digite o preco do medicamento:\n");
@@ -29,10 +29,10 @@ public class Farmacia {
 				System.out.println("Digite (1) para sair\nDigite (0) para Sair");
 				cadastro = entrada.nextInt();
 		}
-		while(sair==0){
+		while(cadastro==1){
 			int i=1;
-			int opcao = entrada.nextInt();
 			System.out.println("\nPara reajustar preco de venda digite (2)\nPara vender digite (3)\nPara comprar digite (4)\n");
+			int opcao = entrada.nextInt();
 			switch(opcao){
 				case 1:{
 					break;
@@ -56,8 +56,8 @@ public class Farmacia {
 				}
 
 			}
-			System.out.println("Para sair digite (1)\nPara continuar digite (0)\n");
-			opcao = entrada.nextInt();
+			System.out.println("Para sair digite (0)\nPara continuar digite (1)\n");
+			cadastro = entrada.nextInt();
 		}
 
 	}
