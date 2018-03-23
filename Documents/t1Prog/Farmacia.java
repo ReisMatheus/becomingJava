@@ -28,7 +28,7 @@ public class Farmacia{
 		while(cadastro==1){
 			int i=1;
 			System.out.println("\nPara mostrar dados do medicamento digite (1)\nPara reajustar preco de venda digite (2)\nPara vender digite (3)\nPara comprar digite (4)\n");
-			int opcao = entrada.next();
+			int opcao = entrada.nextInt();
 			switch(opcao){
 				case 1:{
 					popular.mostra();
