@@ -21,7 +21,7 @@ public class Remedios{
 		this.qtdEstoque = qtdEstoque;
 	}
 	void reajustaPrecoVenda(Double percentual){
-
+		
 	}
 	void vender(int quantidade){
 		System.out.println(this.nome);
@@ -33,7 +33,6 @@ public class Remedios{
 			this.qtdEstoque -= quantidade;
 			System.out.printf("Medicamento: "+this.nome+"\nQuantidade: %s\nValor Unidade: %.2f\nValor Total: %.2f", quantidade, this.precoVenda, valorTotal);
 		}
-
 	}
 	void comprar(int quantidade){
 		
