@@ -31,6 +31,7 @@ public class Farmacia{
 			int opcao = entrada.nextInt();
 			switch(opcao){
 				case 1:{
+					popular.mostra();
 					break;
 				}
 				case 2:{

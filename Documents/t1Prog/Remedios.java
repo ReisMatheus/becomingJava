@@ -38,6 +38,6 @@ public class Remedios{
 		
 	}
 	void mostra(){
-		System.out.printf("Medicamento: %s\nPreco de Venda: %i\nData de validade: %s\nLaboratorio: %s\nReceita: %s\nEstoque: %i", this.nome, this.precoVenda, this.dataValidade)
+		System.out.printf("Medicamento: %s\nPreco de Venda: %.2f\nData de validade: %s\nLaboratorio: %s\nReceita: %b\nEstoque: %i", this.nome, this.precoVenda, this.dataValidade, this.receitaObrigatoria, this.qtdEstoque);
 	}
 }
