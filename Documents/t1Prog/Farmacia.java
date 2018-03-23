@@ -1,27 +1,27 @@
 import java.util.Scanner;
 
-public class Farmacia {
+public class Farmacia{
 	public static void main(String[] args){
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Cadastro e compra de medicamentos");
-		int cadastro = 0;
-		System.out.println("Digite o nome do medicamento:\n");
+		int cadastro = 1;
+		System.out.println("Digite o nome do medicamento:");
 		String nome = entrada.nextLine();
-		System.out.println("Digite o preco do medicamento:\n");
+		System.out.println("Digite o preco do medicamento:");
 		Double precoVenda = entrada.nextDouble();
-		System.out.println("Digite a data de validade do medicamento:\n");
-		String dataValidade = entrada.nextLine();
-		System.out.println("Digite o laboratoria do medicamento:\n");
-		String laboratorio = entrada.nextLine();
+		System.out.println("Digite a data de validade do medicamento:");
+		String dataValidade = entrada.next();
+		System.out.println("Digite o laboratoria do medicamento:");
+		String laboratorio = entrada.next();
 		Boolean receitaObrigatoria;
 		while(true){
-			System.out.println("O medicamento necessita de receita?:\n(1) Sim\n(0) Nao");
+			System.out.println("O medicamento necessita de receita?:\n(true) Sim\n(false) Nao");
 			receitaObrigatoria = entrada.nextBoolean();
 			if((receitaObrigatoria==true) || (receitaObrigatoria==false)){
 				break;	
 			}
 		}
-		System.out.println("Digite a quantidade do medicamento no estoque:\n");
+		System.out.println("Digite a quantidade do medicamento no estoque:");
 		int qtdEstoque = entrada.nextInt();
 		Remedios popular = new Remedios(nome, precoVenda, dataValidade, laboratorio, receitaObrigatoria, qtdEstoque);
 
@@ -38,7 +38,7 @@ public class Farmacia {
 					break;
 				}
 				case 3:{
-					System.out.println("Qual medicamento você deseja?\n");
+					System.out.println("Quantas unidade de "+popular.nome+" voce deseja?");
 					int quantidade = entrada.nextInt();
 					popular.vender(quantidade);
 					break;
@@ -52,7 +52,7 @@ public class Farmacia {
 				}
 
 			}
-			System.out.println("Para sair digite (0)\nPara continuar digite (1)\n");
+			System.out.println("\nPara sair digite (0)\nPara continuar digite (1)\n");
 			cadastro = entrada.nextInt();
 		}
 
