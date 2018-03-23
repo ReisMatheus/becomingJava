@@ -14,6 +14,7 @@ public class Farmacia {
 				String dataValidade = entrada.nextLine();
 				System.out.println("Digite o laboratoria do medicamento:\n");
 				String laboratorio = entrada.nextLine();
+				Boolean receitaObrigatoria;
 				while(true){
 					System.out.println("O medicamento necessita de receita?:\n(1) Sim\n(0) Nao");
 					Boolean receitaObrigatoria = entrada.nextBoolean();
