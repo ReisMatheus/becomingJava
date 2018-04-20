@@ -28,7 +28,6 @@ public class Jornal{
 						while(itrPbSemanal.hasNext()){
 							if(itrPbSemanal.hasNext()){
 								JOptionPane.showMessageDialog(null, itrPbSemanal.next().getDadosPbSemanal(), "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
-								//System.out.println(itrPeixe.next().getDados());
 							}
 						}
 						break;
@@ -45,23 +44,12 @@ public class Jornal{
 							JOptionPane.showMessageDialog(null, "Animal nao encontrado\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 						}
 						break;
-					}/*
-					case 3:{
-						ListIterator<PublicacaoSemanal> itrPeixe = PublicacaoSemanal.listIterator();
-						String nome = JOptionPane.showInputDialog(null, "Digite o nome do animal\n", "ZOO", JOptionPane.PLAIN_MESSAGE);
-						if(itrPeixe.next().getNome().equals(nome)){
-							String corPeixe = JOptionPane.showInputDialog(null, "Digite a NOVA cor do "+nome+"\n", "ZOO", JOptionPane.PLAIN_MESSAGE);
-							JOptionPane.showMessageDialog(null, itrPeixe.previous().setCor(corPeixe), "PEIXES", JOptionPane.PLAIN_MESSAGE);					
-							break;
-						}
-						break;
-					}*/
+					}
 					case 0:{
 						control = 0;
 						break;
 					}
 				}
-				//JOptionPane.showMessageDialog(null, opt, "Bem vindo ao ZOO", JOptionPane.PLAIN_MESSAGE);
 			}
 			catch(Exception e){
 				continue;
