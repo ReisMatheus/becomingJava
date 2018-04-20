@@ -1,49 +1,61 @@
 public class Animal{
 
-	protected String nome;
-	protected int comprimento;
-	protected String cor;
-	protected String ambiente;
-	protected double velocidade;
+	private String nome;
+	private int comprimento;
+	private String cor;
+	private String ambiente;
+	private double velocidade;
+	private int patas;
+
 
 	Animal(String nome, String cor, 
 		String ambiente, int comprimento, 
-		double velocidade){
+		double velocidade, int patas){
 
 		this.nome = nome;
 		this.cor = cor;
 		this.ambiente = ambiente;
 		this.comprimento = comprimento;
 		this.velocidade = velocidade;
+		this.patas = patas;
 	}
-
-	//Muda Nome
-	public void setNome(String nome){
+	protected String setNome(String nome){
 		this.nome = nome;
-
+		return "Nome alterado com sucesso\n";
 	}
-
-	//Muda Comprimento
-	public void setComprimento(int comprimento){
+	public String getNome(){
+		return this.nome;
+	}
+	protected String setComprimento(int comprimento){
 		this.comprimento = comprimento;
+		return "Comprimento alterado com sucesso\n";
 	}
-
-	//Muda Cor
-	public void setCor(String cor){
+	public int getComprimento(){
+		return this.comprimento;
+	}
+	protected String setCor(String cor){
 		this.cor = cor;
+		return "Cor alterada com sucesso\n";
 	}
-
-	//Muda Ambiente
-	public void setAmbiente(String ambiente){
+	public String getCor(){
+		return this.cor;
+	}
+	protected String setAmbiente(String ambiente){
 		this.ambiente = ambiente;
+		return "Ambiente alterado com sucesso\n";
 	}
-
-	//Muda Velocidade
-	public void setVelocidade(float velocidade){
+	public String getAmbiente(){
+		return this.ambiente;
+	}
+	protected String setVelocidade(float velocidade){
 		this.velocidade = velocidade;
+		return "Velocidade alterada com sucesso\n";
 	}
-
-	public String getDados(){
-		return "super";
+	public Double getVelocidade(){
+		return this.velocidade;
+	}
+	protected String getDados(){
+		String	foo = "Nome: "+this.nome+"\nCor: "+this.cor+"\nAmbiente: "+this.ambiente+"\nComprimento: "+this.comprimento+"\nVelocidade: "+this.velocidade+"\nPatas: "+this.patas+"\n";
+		return foo;
 	}
 }
