@@ -23,7 +23,7 @@ public class Editora{
 		this.cnpj = cnpj;
 		return "CNPJ alterado com sucesso";
 	}
-	protected String getDados(){
+	protected String getDadosEditora(){
 		return "Nome Editora: "+this.nome+"\nCNPJ: "+this.cnpj;
 	}
 }

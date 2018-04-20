@@ -11,8 +11,9 @@ public class Jornal{
 		String nomeEditora = JOptionPane.showInputDialog(null, "Digite o nome da Editora\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 		String cnpjEditora = JOptionPane.showInputDialog(null, "Digite o CNPJ da Editora\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 		Double dbPrecoExemplar = Double.parseDouble(precoExemplar);
-		PublicacaoSemanal pbs1 = new publicacoesSemanais(nomeJornal, dbPrecoExemplar);
-		pbs1.setEditora("Times", 4455669977);
+		int cnpj = Integer.parseInt(cnpjEditora);
+		PublicacaoSemanal pbs1 = new PublicacaoSemanal(nomeJornal, dbPrecoExemplar);
+		pbs1.setEditora(nomeEditora, cnpj);
 		publicacoesSemanais.add(pbs1);
 
 		int control = 1;
@@ -26,7 +27,7 @@ public class Jornal{
 						Iterator<PublicacaoSemanal> itrPbSemanal = publicacoesSemanais.iterator();
 						while(itrPbSemanal.hasNext()){
 							if(itrPbSemanal.hasNext()){
-								JOptionPane.showMessageDialog(null, itrPbSemanal.next().getDados(), "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
+								JOptionPane.showMessageDialog(null, itrPbSemanal.next().getDadosPbSemanal(), "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 								//System.out.println(itrPeixe.next().getDados());
 							}
 						}
@@ -34,9 +35,9 @@ public class Jornal{
 					}
 					case 2:{
 						ListIterator<PublicacaoSemanal> itrPbSemanal = publicacoesSemanais.listIterator();
-						String nomeJornal = JOptionPane.showInputDialog(null, "Digite o nome do Jornal\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
-						if(itrPbSemanal.next().getNome().equals(nomeJornal)){
-							String nomeAlterado = JOptionPane.showInputDialog(null, "Digite o NOVO nome do "+nomeJornal+"\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
+						String nomeCompare = JOptionPane.showInputDialog(null, "Digite o nome do Jornal\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
+						if(itrPbSemanal.next().getNome().equals(nomeCompare)){
+							String nomeAlterado = JOptionPane.showInputDialog(null, "Digite o NOVO nome do "+nomeCompare+"\n", "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 							JOptionPane.showMessageDialog(null, itrPbSemanal.previous().setNome(nomeAlterado), "JORNALEIRO", JOptionPane.PLAIN_MESSAGE);
 							break;
 						}

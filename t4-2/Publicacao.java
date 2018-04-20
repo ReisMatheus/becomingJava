@@ -4,15 +4,15 @@ public class Publicacao{
 	private String nome;
 	private Double precoExemplar;
 	protected Double valorAnuidade;
-	public Editora realEditora = new Editora();
-
+	protected Editora realEditora;
+	
 	public Publicacao(String nome,
 					 Double precoExemplar){
 		this.nome = nome;
 		this.precoExemplar = precoExemplar;
 	}
 	protected String setEditora(String nome, int cnpj){
-		Editora realEditora = new Editora(nome, cnpj);
+		realEditora = new Editora(nome, cnpj);
 		return "Editora definida com sucesso";
 	}
 	protected String setNome(String nome){
@@ -37,8 +37,8 @@ public class Publicacao{
 		calcularAnuidade();
 		return "Valor Anuidade:"+this.valorAnuidade;
 	}
-	protected String getDados(){
-		return "Nome: "+this.nome+"\nPreco Exemplar: "+this.precoExemplar+"\nValor Anuidade: "+this.valorAnuidade+"\n"+realEditora.getDados()+"\n";
+	protected String getDadosPbMensal(){
+		return "Nome: "+this.nome+"\nPreco Exemplar: "+this.precoExemplar+"\nValor Anuidade: "+this.valorAnuidade+"\n"+realEditora.getDadosEditora()+"\n";
 	}
 
 }
