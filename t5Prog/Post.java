@@ -12,18 +12,28 @@ public class Post{
 		this.likes = 0;
 		this.dislikes = 0;
 	}
+	public Post(){}
+
+	protected String getTitle(){
+		return this.title;
+	}
+
 	protected String show(){
 		String rtr = "Titulo: "+this.title+"\nData: "+this.date+"\nConteudo: "+this.content+"\nLikes: "+this.likes+"\n";
 		return rtr;
 	}
-	protected String like(Boolean like){
-		if(like){
-			this.likes++;
-			return "Liked!\n";
-		}
-		else{
-			this.dislikes--;
-			return "Disliked!\n";
-		}
+	public void setTitle(String title){
+		this.title = title;
+	}
+	public void setContent(String content){
+		this.content = content;
+	}
+	protected String setLike(Boolean like){
+		this.likes++;
+		return "Liked!\n";
+	}
+	protected String setDislike(Boolean dislike){
+		this.dislikes--;
+		return "Disliked!\n";
 	}
 }

@@ -1,3 +1,3 @@
 public interface Evaluable{
-	public String evaluate(int value);
+	public void evaluate(int value);
 }

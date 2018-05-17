@@ -4,6 +4,10 @@ public class News extends Post{
 		super(title, content);
 		this.source = source;
 	}
+	public News(){}
+	public void setSource(String source){
+		this.source = source;
+	}
 	protected String show(){
 		String rtr = super.show()+"\nFonte: "+this.source+"\n";
 		return rtr;
