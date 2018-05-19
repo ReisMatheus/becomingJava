@@ -28,7 +28,10 @@ public class Blog{
 						break;
 					}
 					case 4:{
-						if(newPost.isEmpty()) break;
+						if(newPost.isEmpty()){
+							JOptionPane.showMessageDialog(null, "Blog vazio\n", "BLOG", JOptionPane.PLAIN_MESSAGE); 
+							break;
+						}
 						showData();
 						break;
 					}
