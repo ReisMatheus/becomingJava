@@ -1,16 +1,23 @@
 import java.util.*;
+import java.text.*;
+
 public class Post{
 	protected String title;
-	protected Date date;
+	protected Date date = new Date();
 	protected String content;
 	protected int likes;
 	protected int dislikes;
 	public Post(String title, String content){
-		date = new Date();
 		this.title = title;
 		this.content = content;
 		this.likes = 0;
 		this.dislikes = 0;
+	}
+	private String dateFormatter(){
+		this.date = Calendar.getInstance().getTime();
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String actualDate = formatter.format(date);
+		return actualDate;
 	}
 	public Post(){}
 
@@ -19,7 +26,7 @@ public class Post{
 	}
 
 	protected String show(){
-		String rtr = "Titulo: "+this.title+"\nData: "+this.date+"\nConteudo: "+this.content+"\nLikes: "+this.likes+"\n";
+		String rtr = "Titulo: "+this.title+"\nData: "+dateFormatter()+"\nConteudo: "+this.content+"\nLikes: "+this.likes+"\n";
 		return rtr;
 	}
 	public void setTitle(String title){
@@ -28,9 +35,8 @@ public class Post{
 	public void setContent(String content){
 		this.content = content;
 	}
-	protected String setLike(Boolean like){
+	protected void setLike(){
 		this.likes++;
-		return "Liked!\n";
 	}
 	protected String setDislike(Boolean dislike){
 		this.dislikes--;

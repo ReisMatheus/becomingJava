@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Blog{
 	List<Post> newPost = new ArrayList<>();
-	ListIterator<Post> itrPst = newPost.listIterator();
 	/*JOptionPane janela = new JOptionPane();
 	ImageIcon likeIcon = new ImageIcon("up.png");
 	ImageIcon dislikeIcon = new ImageIcon("down.png");
@@ -34,13 +33,28 @@ public class Blog{
 						break;
 					}
 					case 4:{
+						if(newPost.isEmpty()) break;
 						showData();
 						break;
 					}
 					case 5:{
-						while(itrPst.hasNext()){ 
-							Post aux = itrPst.next();
-							JOptionPane.showMessageDialog(null, itrPst.nextIndex() + aux.getTitle(), "BLOG", JOptionPane.PLAIN_MESSAGE);
+						if(newPost.isEmpty()) break;
+						ListIterator<Post> auxItr = newPost.listIterator();
+						int aux = 0;
+						while(auxItr.hasNext()){
+							Post eAux = auxItr.next();
+							JOptionPane.showMessageDialog(null, "Codigo: "+aux+"\nTitulo: "+ eAux.getTitle(), "BLOG", JOptionPane.PLAIN_MESSAGE);
+							aux++;
+						}
+						String cod = JOptionPane.showInputDialog(null, "Digite o codigo do post que deseja curtir\n", "BLOG", JOptionPane.PLAIN_MESSAGE);
+						int codInt = Integer.parseInt(cod);
+						try{
+							newPost.get(codInt);
+							newPost.get(codInt).setLike();
+							showData();
+						}
+						catch(IndexOutOfBoundsException e){
+							JOptionPane.showMessageDialog(null,"Post nao encontrado\n", "BLOG", JOptionPane.PLAIN_MESSAGE);	
 						}
 						break;
 					} 
@@ -102,6 +116,7 @@ public class Blog{
 	}
 
 	public void showData(){
+		ListIterator<Post> itrPst = newPost.listIterator();
 		while(itrPst.hasNext()){
 			Post aux = itrPst.next();
 			if(aux instanceof News){
@@ -109,6 +124,9 @@ public class Blog{
 			}
 			if(aux instanceof ProductReview){
 				JOptionPane.showMessageDialog(null, aux.show(), "PRODUCT-REVIEW", JOptionPane.PLAIN_MESSAGE);
+			}
+			if(!(aux instanceof ProductReview) && !(aux instanceof News)){
+				JOptionPane.showMessageDialog(null, aux.show(), "STD-POST", JOptionPane.PLAIN_MESSAGE);	
 			}
 		}
 	}
