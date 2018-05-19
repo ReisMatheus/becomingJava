@@ -26,7 +26,7 @@ public class Post{
 	}
 
 	protected String show(){
-		String rtr = "Titulo: "+this.title+"\nData: "+dateFormatter()+"\nConteudo: "+this.content+"\nLikes: "+this.likes+"\n";
+		String rtr = "Titulo: "+this.title+"\nData: "+dateFormatter()+"\nConteudo: "+this.content+"\nLikes: "+this.likes+"\nDislikes: "+this.dislikes+"\n";
 		return rtr;
 	}
 	public void setTitle(String title){
@@ -38,8 +38,7 @@ public class Post{
 	protected void setLike(){
 		this.likes++;
 	}
-	protected String setDislike(Boolean dislike){
-		this.dislikes--;
-		return "Disliked!\n";
+	protected void setDislike(){
+		this.dislikes++;
 	}
 }

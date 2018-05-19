@@ -33,7 +33,10 @@ public class Blog{
 						break;
 					}
 					case 5:{
-						if(newPost.isEmpty()) break;
+						if(newPost.isEmpty()){
+							JOptionPane.showMessageDialog(null, "Blog vazio\n", "BLOG", JOptionPane.PLAIN_MESSAGE); 
+							break;
+						}
 						ListIterator<Post> auxItr = newPost.listIterator();
 						int aux = 0;
 						while(auxItr.hasNext()){
@@ -52,7 +55,31 @@ public class Blog{
 							JOptionPane.showMessageDialog(null,"Post nao encontrado\n", "BLOG", JOptionPane.PLAIN_MESSAGE);	
 						}
 						break;
-					} 
+					}
+					case 6:{
+						if(newPost.isEmpty()){
+							JOptionPane.showMessageDialog(null, "Blog vazio\n", "BLOG", JOptionPane.PLAIN_MESSAGE); 
+							break;
+						}
+						ListIterator<Post> auxItr = newPost.listIterator();
+						int aux = 0;
+						while(auxItr.hasNext()){
+							Post eAux = auxItr.next();
+							JOptionPane.showMessageDialog(null, "Codigo: "+aux+"\nTitulo: "+ eAux.getTitle(), "BLOG", JOptionPane.PLAIN_MESSAGE);
+							aux++;
+						}
+						String cod = JOptionPane.showInputDialog(null, "Digite o codigo do post que deseja nao curtir\n", "BLOG", JOptionPane.PLAIN_MESSAGE);
+						int codInt = Integer.parseInt(cod);
+						try{
+							newPost.get(codInt);
+							newPost.get(codInt).setDislike();
+							showData();
+						}
+						catch(IndexOutOfBoundsException e){
+							JOptionPane.showMessageDialog(null,"Post nao encontrado\n", "BLOG", JOptionPane.PLAIN_MESSAGE);	
+						}
+						break;
+					}
 					case 0:{
 						out = 0;
 						break;
