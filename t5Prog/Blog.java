@@ -3,11 +3,6 @@ import java.util.*;
 
 public class Blog{
 	List<Post> newPost = new ArrayList<>();
-	/*JOptionPane janela = new JOptionPane();
-	ImageIcon likeIcon = new ImageIcon("up.png");
-	ImageIcon dislikeIcon = new ImageIcon("down.png");
-	JButton likeBt = new JButton("Like", likeIcon);
-	JButton dislikeBt = new JButton("Dislike", dislikeIcon);*/
 
 	public void run(){
 		int out = 1;
@@ -18,12 +13,12 @@ public class Blog{
 				int opt = Integer.parseInt(optStr);
 				switch(opt){
 					case 1:{
-						Post news = new News();
+						Post news = new News(); //UPCAST
 						readData(news);
 						break;
 					}
 					case 2:{
-						Post productRw = new ProductReview();
+						Post productRw = new ProductReview(); //UPCAST
 						readData(productRw);
 						break;
 					}
