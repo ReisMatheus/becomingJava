@@ -1,7 +1,7 @@
-package practiveJava;
+//package becomingJava.practiveJava.practiveJava;
 import java.util.*;
 
-public class intervaloException implements r {
+public class intervaloException {
 	public static void main(String args[]) {
 		Scanner in = new Scanner(System.in);
 		Integer vetor[] = {2, 3, 4, 5};
@@ -17,13 +17,15 @@ public class intervaloException implements r {
 		}
 	}
 	public static void somaVet(Integer vetor[], int ad) throws ArrayIndexOutOfBoundsException, EmptyStackException{
-		if(vetor.length < ad) {
+		if(ad >= vetor.length) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		int i = 0;
 		while(i <= vetor.length) {
-			if(vetor[i] == 0) i++;
-			else throw new EmptyStackException();
+			if(vetor[i] != 0) break;
+			else{
+			}
+			throw new EmptyStackException();
 		}
 		for(i = 0; i <= vetor.length; i++){
 			int soma = 0;
